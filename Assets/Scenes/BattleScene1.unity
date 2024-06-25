@@ -386,14 +386,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b5b10fc4ecacd408bd93ae765e9c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab1: {fileID: 7461577530856661483, guid: 4aed82870b1c4694584673f62f844aa5, type: 3}
-  playerPrefab2: {fileID: 7461577530856661483, guid: 67d381483e473cf4f849fb88e897b418, type: 3}
-  playerPrefab3: {fileID: 7461577530856661483, guid: 33308286cd508f246b9f9976dc0b5ddc, type: 3}
-  playerPrefab4: {fileID: 7461577530856661483, guid: 01967e982bb3340419be94cabf104936, type: 3}
-  spawnPoint1: {fileID: 1925800323}
-  spawnPoint2: {fileID: 949588857}
-  spawnPoint3: {fileID: 964723504}
-  spawnPoint4: {fileID: 2078796507}
+  playerPrefabs:
+  - {fileID: 7461577530856661483, guid: 4aed82870b1c4694584673f62f844aa5, type: 3}
+  - {fileID: 7461577530856661483, guid: 67d381483e473cf4f849fb88e897b418, type: 3}
+  - {fileID: 7461577530856661483, guid: 33308286cd508f246b9f9976dc0b5ddc, type: 3}
+  - {fileID: 7461577530856661483, guid: 01967e982bb3340419be94cabf104936, type: 3}
+  spawnPoints:
+  - {fileID: 1925800323}
+  - {fileID: 949588857}
+  - {fileID: 964723504}
+  - {fileID: 2078796507}
+  totalPlayers: 2
 --- !u!4 &1662080286
 Transform:
   m_ObjectHideFlags: 0
