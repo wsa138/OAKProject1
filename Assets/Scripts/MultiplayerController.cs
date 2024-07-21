@@ -16,8 +16,6 @@ public class MultiplayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("MultiplayerController script started");
-
         // Ensure totalPlayers is within the valid range starting.
         totalPlayers = Mathf.Clamp(totalPlayers, 1, 4);
 

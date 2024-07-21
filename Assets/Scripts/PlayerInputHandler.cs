@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
-    private CharacterController characterController;
-    Vector2 moveInput;
+    private Vector2 moveInput;
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
-    void Awake()
+    private void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        if (characterController == null)
-            Debug.LogError("CharacterController component not found!");
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        Vector2 moveDirection = new Vector2(moveInput.x, moveInput.y);
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+
+        // Check which direction the sprite should be facing and flip accordingly.
+        if (moveInput.x > 0)
+        {
+            spriteRenderer.flipX = true; //Moving right, flip.
+        } 
+        else if (moveInput.x < 0) 
+        {
+            spriteRenderer.flipX = false; // Moving left, do not flip.
+        }
     }
 
     void OnMovement(InputValue value)
