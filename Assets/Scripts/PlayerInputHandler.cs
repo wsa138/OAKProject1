@@ -7,15 +7,17 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     private Vector2 moveInput;
     private Rigidbody2D rb;
-    private SpriteRenderer[] spriteRenderers;
     private bool isFlipped = false;
+    private Vector3 originalScale;
 
     [SerializeField] Transform arm;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
+        // Store the original local scale of Player object
+        originalScale = transform.localScale;
     }
 
     private void Update()
@@ -26,24 +28,6 @@ public class PlayerInputHandler : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
-
-        // Check which direction the sprite should be facing and flip accordingly.
-        if (moveInput.x > 0 && isFlipped)
-        {
-            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-            {
-                spriteRenderer.flipX = false; //Moving right, flip right.
-                isFlipped = false;
-            }
-        } 
-        else if (moveInput.x < 0 && !isFlipped) 
-        {
-            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-            {
-                spriteRenderer.flipX = true; //Moving left, flip left.
-                isFlipped = true;
-            }
-        }
     }
 
     void OnMovement(InputValue value)
@@ -58,7 +42,34 @@ public class PlayerInputHandler : MonoBehaviour
         if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
         {
             float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+            // Adjust the angle based on the flip state
+            if (!isFlipped)
+            {
+                angle = 180 - angle; // Invert the angle if flipped
+            }
+
+            // Correct the vertical inversion
+            if (transform.localScale.x < 0)
+            {
+                angle = -angle; // Invert vertically
+            }
+
             arm.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        // Flip the player based on aim
+        if (aimDirection.x < 0 && isFlipped)
+        {
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            isFlipped = false;
+        } 
+        else if (aimDirection.x > 0 && !isFlipped)
+        {
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            isFlipped = true;
         }
     }
 }
+
+
