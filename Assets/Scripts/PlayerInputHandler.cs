@@ -11,6 +11,8 @@ public class PlayerInputHandler : MonoBehaviour
     private Vector3 originalScale;
 
     [SerializeField] Transform arm;
+    [SerializeField] Transform firePoint;
+    [SerializeField] GameObject projectilePrefab;
 
     private void Start()
     {
@@ -69,6 +71,11 @@ public class PlayerInputHandler : MonoBehaviour
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
             isFlipped = true;
         }
+    }
+
+    void OnShoot()
+    {
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 }
 
