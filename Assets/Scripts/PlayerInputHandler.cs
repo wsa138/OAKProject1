@@ -64,11 +64,13 @@ public class PlayerInputHandler : MonoBehaviour
         if (aimDirection.x < 0 && isFlipped)
         {
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            firePoint.localRotation = Quaternion.Euler(0, 0, 180); // Rotate firePoint by 180 degrees
             isFlipped = false;
         } 
         else if (aimDirection.x > 0 && !isFlipped)
         {
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            firePoint.localRotation = Quaternion.Euler(0, 0, 0); // Reset firePoint rotation
             isFlipped = true;
         }
     }
