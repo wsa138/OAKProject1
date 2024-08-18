@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 20f;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] int damage = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
         Debug.Log(collision.name);
         Destroy(gameObject);
     }

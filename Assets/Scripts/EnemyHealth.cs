@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health = 100;
+    [SerializeField] GameObject deathEffect;
 
     // Make this enemy take damage
     public void TakeDamage(int damage)
@@ -19,8 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        // Can add death animation gameObject effect.
-        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
