@@ -7,7 +7,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     private Vector2 moveInput;
     private Rigidbody2D rb;
-    private bool isFlipped = false;
+    private bool isFlippedLeft = false;
     private Vector3 originalScale;
 
     [SerializeField] Transform arm;
@@ -46,7 +46,7 @@ public class PlayerInputHandler : MonoBehaviour
             float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
             // Adjust the angle based on the flip state
-            if (!isFlipped)
+            if (!isFlippedLeft)
             {
                 angle = 180 - angle; // Invert the angle if flipped
             }
@@ -60,18 +60,18 @@ public class PlayerInputHandler : MonoBehaviour
             arm.rotation = Quaternion.Euler(0, 0, angle);
         }
 
-        // Flip the player based on aim
-        if (aimDirection.x < 0 && isFlipped)
+        // Flip the player based on aim, rotate firePoint
+        if (aimDirection.x < 0 && isFlippedLeft)
         {
-            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip player to Left
             firePoint.localRotation = Quaternion.Euler(0, 0, 180); // Rotate firePoint by 180 degrees
-            isFlipped = false;
+            isFlippedLeft = false;
         } 
-        else if (aimDirection.x > 0 && !isFlipped)
+        else if (aimDirection.x > 0 && !isFlippedLeft)
         {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z); // Flip player to Right
             firePoint.localRotation = Quaternion.Euler(0, 0, 0); // Reset firePoint rotation
-            isFlipped = true;
+            isFlippedLeft = true;
         }
     }
 
