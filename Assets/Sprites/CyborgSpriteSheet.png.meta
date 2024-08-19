@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0028ac0b3ec6b40ae7e810f1b12e22
+      internalID: -1503101372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 611
+        width: 23
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf232837a6787b4a88139e59732c5ac
+      internalID: -664892852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 614
+        width: 40
+        height: 46
+      alignment: 9
+      pivot: {x: 0.6119751, y: 0.07510774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebb46441d1622e4d84e5554dbb86712
+      internalID: -737143900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 320
+        width: 125
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db71b2ac2954784a9ce049271756182
+      internalID: -1694131395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 317
+        width: 89
+        height: 135
+      alignment: 9
+      pivot: {x: 0.8614351, y: 0.8589272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9e4942ce16a594985f2dacb94918f8
+      internalID: -706550714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 320
+        width: 95
+        height: 123
+      alignment: 9
+      pivot: {x: 0.16996428, y: 0.8773923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1e18e2d9f32ea46871d0bd1f583dc0
+      internalID: -1578001683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 87
+        width: 65
+        height: 118
+      alignment: 9
+      pivot: {x: 0.1974269, y: 0.84058976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9542761830e6443a4db0d9b9bbd168
+      internalID: -1905912727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 86
+        width: 62
+        height: 119
+      alignment: 9
+      pivot: {x: 0.8585894, y: 0.8377278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb22ab20ad6bba4d9be2dc96bf40cef
+      internalID: -1710313304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CyborgSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 69
+        width: 23
+        height: 123
+      alignment: 9
+      pivot: {x: 0.5371784, y: 0.08635488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12264fa37dd1ab34393be3215f311a3b
+      internalID: 742351064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +308,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CyborgSpriteSheet_0: -1503101372
+      CyborgSpriteSheet_1: -664892852
+      CyborgSpriteSheet_2: -737143900
+      CyborgSpriteSheet_3: -1694131395
+      CyborgSpriteSheet_4: -706550714
+      CyborgSpriteSheet_5: -1578001683
+      CyborgSpriteSheet_6: -1905912727
+      CyborgSpriteSheet_7: -1710313304
+      CyborgSpriteSheet_8: 742351064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
