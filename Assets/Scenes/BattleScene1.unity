@@ -315,67 +315,6 @@ Transform:
   - {fileID: 2078796507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &318288898
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.2210183
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.4722242
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.014069539
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139242992319103951, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6886127873788719400, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: m_Name
-      value: BloodEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 8718521791401564582, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 208b2043a4ba3ea4697ab477916c9f17, type: 3}
 --- !u!1 &595016052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1272,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 2
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1666,4 +1605,3 @@ SceneRoots:
   - {fileID: 1712945626}
   - {fileID: 1872017147}
   - {fileID: 7481524187159960055}
-  - {fileID: 318288898}

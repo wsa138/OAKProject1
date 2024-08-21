@@ -22,12 +22,24 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
+        Debug.Log(collision.name);
+
+        // Access enemy health controller/script and decrease health
         EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
+            Debug.Log(enemy.tag);
             enemy.TakeDamage(damage);
         }
-        Debug.Log(collision.name);
-        Destroy(gameObject);
+
+        // Don't destroy projectile if it hits a player character
+        if (collision.gameObject.tag == "Player")
+        {
+            return;
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 }

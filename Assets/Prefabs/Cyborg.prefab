@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4270812618790696541}
+  - {fileID: 6311224935216067225}
   m_Father: {fileID: 20025903552478686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.843}
 --- !u!212 &5808230575459620713
@@ -157,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 482462507
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 742351064, guid: 98d1af163e1fa0c479f8e45e721f4983, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,6 +170,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2429284459209547902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6311224935216067225}
+  m_Layer: 6
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6311224935216067225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429284459209547902}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.5690109, w: 0.82233006}
+  m_LocalPosition: {x: -0.297, y: -0.871, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3688523161825112984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -69.363}
 --- !u!1 &3837207686689517588
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +556,7 @@ GameObject:
   - component: {fileID: 1860528898404721042}
   m_Layer: 6
   m_Name: Cyborg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  arm: {fileID: 0}
-  firePoint: {fileID: 0}
+  arm: {fileID: 3688523161825112984}
+  firePoint: {fileID: 6311224935216067225}
   projectilePrefab: {fileID: 7682152998251007599, guid: e928647a4bbb6c540a8a93980138ae2b, type: 3}
 --- !u!50 &4548226070975657551
 Rigidbody2D:
