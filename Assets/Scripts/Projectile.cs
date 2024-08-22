@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed = 20f;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] int damage = 20;
+    [SerializeField] GameObject hitEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class Projectile : MonoBehaviour
             return;
         } else
         {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
