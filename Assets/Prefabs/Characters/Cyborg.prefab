@@ -640,7 +640,7 @@ MonoBehaviour:
   moveSpeed: 5
   arm: {fileID: 3688523161825112984}
   firePoint: {fileID: 6311224935216067225}
-  projectilePrefab: {fileID: 7682152998251007599, guid: e928647a4bbb6c540a8a93980138ae2b, type: 3}
+  projectilePrefab: {fileID: 7682152998251007599, guid: 37c0caeacf72e2e4a984c18bb276f14d, type: 3}
 --- !u!50 &4548226070975657551
 Rigidbody2D:
   serializedVersion: 4
