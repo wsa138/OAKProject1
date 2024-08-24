@@ -51,12 +51,18 @@ public class PlayerInputHandler : MonoBehaviour
         if (aimDirection.x == 0 && aimDirection.y == 0)
         {
             bodyAnimator.SetBool("isAiming", false);
-            armAnimator.enabled = true;
+            if (armAnimator != null)
+            {
+                armAnimator.enabled = true;
+            }            
         }
         else
         {
             bodyAnimator.SetBool("isAiming", true);
-            armAnimator.enabled = false;
+            if (armAnimator != null) 
+            {
+                armAnimator.enabled = false;
+            }            
         }
 
         if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
