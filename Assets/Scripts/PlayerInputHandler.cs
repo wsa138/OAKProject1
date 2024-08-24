@@ -9,6 +9,8 @@ public class PlayerInputHandler : MonoBehaviour
     private Rigidbody2D rb;
     private bool isFlippedLeft = false;
     private Vector3 originalScale;
+    Animator bodyAnimator;
+    Animator armAnimator;
 
     [SerializeField] Transform arm;
     [SerializeField] Transform firePoint;
@@ -20,6 +22,10 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Store the original local scale of Player object
         originalScale = transform.localScale;
+
+        // Get all animators on character
+        bodyAnimator = GetComponent<Animator>();
+        armAnimator = arm.GetComponent<Animator>();
     }
 
     private void Update()
@@ -40,6 +46,18 @@ public class PlayerInputHandler : MonoBehaviour
     void OnAim(InputValue value)
     {
         Vector2 aimDirection = value.Get<Vector2>();
+        
+        // Set animator states based on aiming.
+        if (aimDirection.x == 0 && aimDirection.y == 0)
+        {
+            bodyAnimator.SetBool("isAiming", false);
+            armAnimator.enabled = true;
+        }
+        else
+        {
+            bodyAnimator.SetBool("isAiming", true);
+            armAnimator.enabled = false;
+        }
 
         if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
         {
