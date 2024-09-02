@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 4548226070975657551}
   - component: {fileID: 4414900631743778875}
   - component: {fileID: 6747469508114505342}
+  - component: {fileID: 119339504608251559}
   m_Layer: 6
   m_Name: Cyborg
   m_TagString: Player
@@ -756,6 +757,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &119339504608251559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7461577530856661483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1676b13c0399104ba3e8a37c6114bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1 &7959587574211277535
 GameObject:
   m_ObjectHideFlags: 0

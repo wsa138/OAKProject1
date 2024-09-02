@@ -15,6 +15,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] Transform arm;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] BoxCollider2D playerCollider; // Reference to the player's box collider;
 
     private void Start()
     {
@@ -49,7 +50,14 @@ public class PlayerInputHandler : MonoBehaviour
 
     void OnShoot()
     {
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        // Instantiate the projectile
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
+        // Get a reference to the PlayerProjectile script.
+        PlayerProjectile projectileScript = projectile.GetComponent<PlayerProjectile>();
+
+        // Set this player game object as the origin player for use in the PlayerProjectile script.
+        projectileScript.originPlayer = this.gameObject;
     }
 
     private void RotateAim(Vector2 aimDirection)

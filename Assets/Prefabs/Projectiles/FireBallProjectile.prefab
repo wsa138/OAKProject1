@@ -184,6 +184,8 @@ MonoBehaviour:
   rb: {fileID: 7792413279375105475}
   damage: 20
   hitEffect: {fileID: 6886127873788719400, guid: ee5f52ea74e9a024f94d636f19577adc, type: 3}
+  originPlayer: {fileID: 0}
+  PVP: 1
 --- !u!58 &6383671838836826825
 CircleCollider2D:
   m_ObjectHideFlags: 0
