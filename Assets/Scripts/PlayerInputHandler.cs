@@ -41,40 +41,10 @@ public class PlayerInputHandler : MonoBehaviour
     void OnAim(InputValue value)
     {
         Vector2 aimDirection = value.Get<Vector2>();
-        
-        // Set animator states based on aiming.
-        if (aimDirection.x == 0 && aimDirection.y == 0)
-        {
-            bodyAnimator.SetBool("isAiming", false);
-            if (armAnimator != null)
-            {
-                armAnimator.enabled = true;
-            }            
-        }
-        else
-        {
-            bodyAnimator.SetBool("isAiming", true);
-            if (armAnimator != null) 
-            {
-                armAnimator.enabled = false;
-            }            
-        }
+        SetAimingAnimation(aimDirection);
 
         RotateAim(aimDirection);
-
-        // Flip the player based on aim, rotate firePoint
-        if (aimDirection.x < 0 && isFlippedLeft)
-        {
-            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip player to Left
-            firePoint.localRotation = Quaternion.Euler(0, 0, 180); // Rotate firePoint by 180 degrees
-            isFlippedLeft = false;
-        } 
-        else if (aimDirection.x > 0 && !isFlippedLeft)
-        {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z); // Flip player to Right
-            firePoint.localRotation = Quaternion.Euler(0, 0, 0); // Reset firePoint rotation
-            isFlippedLeft = true;
-        }
+        FlipPlayer(aimDirection);
     }
 
     void OnShoot()
@@ -101,6 +71,44 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
             arm.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
+    private void FlipPlayer(Vector2 aimDirection)
+    {
+        // Flip the player based on aim, rotate firePoint
+        if (aimDirection.x < 0 && isFlippedLeft)
+        {
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip player to Left
+            firePoint.localRotation = Quaternion.Euler(0, 0, 180); // Rotate firePoint by 180 degrees
+            isFlippedLeft = false;
+        }
+        else if (aimDirection.x > 0 && !isFlippedLeft)
+        {
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z); // Flip player to Right
+            firePoint.localRotation = Quaternion.Euler(0, 0, 0); // Reset firePoint rotation
+            isFlippedLeft = true;
+        }
+    }
+
+    private void SetAimingAnimation(Vector2 aimDirection)
+    {
+        // Set animator states based on aiming.
+        if (aimDirection.x == 0 && aimDirection.y == 0)
+        {
+            bodyAnimator.SetBool("isAiming", false);
+            if (armAnimator != null)
+            {
+                armAnimator.enabled = true;
+            }
+        }
+        else
+        {
+            bodyAnimator.SetBool("isAiming", true);
+            if (armAnimator != null)
+            {
+                armAnimator.enabled = false;
+            }
         }
     }
 }

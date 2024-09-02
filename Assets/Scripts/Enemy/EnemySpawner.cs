@@ -13,12 +13,6 @@ public class EnemySpawner : MonoBehaviour
         SpawnEnemy();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void SpawnEnemy()
     {
         Instantiate(enemy1, spawnPoint1.position, spawnPoint1.rotation);
