@@ -19,6 +19,12 @@ public class MultiplayerController : MonoBehaviour
         // Ensure totalPlayers is within the valid range starting.
         totalPlayers = Mathf.Clamp(totalPlayers, 1, 4);
 
+        CreatePlayers();
+    }
+
+
+    private void CreatePlayers()
+    {
         // Loop to instantiate the player prefabs at the spawn points.
         for (int i = 0; i < totalPlayers; i++)
         {
@@ -29,9 +35,4 @@ public class MultiplayerController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

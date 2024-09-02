@@ -15,23 +15,13 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.tag);
         Debug.Log(collision.name);
 
-        // Access enemy health controller/script and decrease health
-        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
+        DecreaseHealth(collision);
 
         // Don't destroy projectile if it hits a player character
         if (collision.gameObject.tag == "Player")
@@ -41,6 +31,16 @@ public class Projectile : MonoBehaviour
         {
             Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+    }
+
+    private void DecreaseHealth(Collider2D collision)
+    {
+        // Access enemy health controller/script and decrease health
+        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
         }
     }
 }

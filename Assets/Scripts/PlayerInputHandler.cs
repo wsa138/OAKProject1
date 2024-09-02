@@ -28,11 +28,6 @@ public class PlayerInputHandler : MonoBehaviour
         armAnimator = arm.GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
@@ -65,24 +60,7 @@ public class PlayerInputHandler : MonoBehaviour
             }            
         }
 
-        if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
-        {
-            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-
-            // Adjust the angle based on the flip state
-            if (!isFlippedLeft)
-            {
-                angle = 180 - angle; // Invert the angle if flipped
-            }
-
-            // Correct the vertical inversion
-            if (transform.localScale.x < 0)
-            {
-                angle = -angle; // Invert vertically
-            }
-
-            arm.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        RotateAim(aimDirection);
 
         // Flip the player based on aim, rotate firePoint
         if (aimDirection.x < 0 && isFlippedLeft)
@@ -102,6 +80,28 @@ public class PlayerInputHandler : MonoBehaviour
     void OnShoot()
     {
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    }
+
+    private void RotateAim(Vector2 aimDirection)
+    {
+        if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
+        {
+            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+            // Adjust the angle based on the flip state
+            if (!isFlippedLeft)
+            {
+                angle = 180 - angle; // Invert the angle if flipped
+            }
+
+            // Correct the vertical inversion
+            if (transform.localScale.x < 0)
+            {
+                angle = -angle; // Invert vertically
+            }
+
+            arm.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 }
 
