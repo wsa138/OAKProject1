@@ -958,6 +958,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1784014673308004241, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2169366672122550683, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -966,6 +970,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1532359841054887846}
+    - target: {fileID: 5578067357741318415, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6943734579588797447, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
       propertyPath: m_Name
       value: PlayerHealthBar
@@ -1049,6 +1057,10 @@ PrefabInstance:
     - target: {fileID: 7031014059924306185, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882267324384710646, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
