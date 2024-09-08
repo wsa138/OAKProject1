@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        // Access the fill area of the healthBar slider.
         fillArea = healthBar.transform.Find("Fill Area").gameObject;
     }
 
@@ -37,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log(gameObject.name + " died");
 
+            // Turn off health bar fill
             fillArea.SetActive(false);
         }
     }
