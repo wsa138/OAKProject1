@@ -426,9 +426,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1870526424784935491, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6943734579588797447, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: PlayerHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 7031014059924306185, guid: 4ed97f486f0b37543abcf5f5c892e834, type: 3}
       propertyPath: m_Pivot.x
