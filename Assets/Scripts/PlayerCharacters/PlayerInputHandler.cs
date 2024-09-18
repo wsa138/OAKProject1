@@ -9,6 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
     private Rigidbody2D rb;
     private bool isFlippedLeft = false;
     private Vector3 originalScale;
+
     Animator bodyAnimator;
     Animator armAnimator;
 
@@ -37,6 +38,17 @@ public class PlayerInputHandler : MonoBehaviour
     void OnMovement(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+
+        // Control walking animation.
+        //TODO: Can probably be optmized.
+        if (value.Get<Vector2>().x > 0.1 || value.Get<Vector2>().y > 0.1 || value.Get<Vector2>().x < -0.1 || value.Get<Vector2>().y < -0.1)
+        {
+            bodyAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            bodyAnimator.SetBool("isWalking", false);
+        }        
     }
 
     void OnAim(InputValue value)
