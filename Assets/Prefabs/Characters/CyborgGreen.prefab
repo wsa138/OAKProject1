@@ -160,8 +160,8 @@ SpriteRenderer:
   m_SortingLayerID: 482462507
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1694131395, guid: 98d1af163e1fa0c479f8e45e721f4983, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1341912, guid: 1cf7b61c0f39e6e48845ffa604d8da50, type: 3}
+  m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 6747469508114505342}
   - component: {fileID: 119339504608251559}
   m_Layer: 6
-  m_Name: Cyborg
+  m_Name: CyborgGreen
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   moveSpeed: 5
   arm: {fileID: 8657309828550357555}
   firePoint: {fileID: 6370010248415997345}
-  projectilePrefab: {fileID: 7682152998251007599, guid: 37c0caeacf72e2e4a984c18bb276f14d, type: 3}
+  projectilePrefab: {fileID: 7682152998251007599, guid: 4ff802e1ba0bd3946a7eb93416a404a0, type: 3}
   playerCollider: {fileID: 0}
 --- !u!50 &4548226070975657551
 Rigidbody2D:

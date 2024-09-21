@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 482462507
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -664892852, guid: 98d1af163e1fa0c479f8e45e721f4983, type: 3}
+  m_Sprite: {fileID: 1494724141, guid: 4f8e511473958a148bca74f091606b40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1030918918407024077}
   - component: {fileID: 6383671838836826825}
   m_Layer: 0
-  m_Name: SwordProjectile
+  m_Name: GreenSwordProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
