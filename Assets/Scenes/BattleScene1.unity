@@ -498,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 949588856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.88, y: 2.27, z: 0}
+  m_LocalPosition: {x: 3.93, y: 2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1233,12 +1233,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefabs:
-  - {fileID: 7461577530856661483, guid: 4aed82870b1c4694584673f62f844aa5, type: 3}
+  - {fileID: 7461577530856661483, guid: 4e16d9dd24165dc42b47784c9f291f5c, type: 3}
   - {fileID: 7461577530856661483, guid: 597a7c10f04a3ba429515c06f9142bc1, type: 3}
+  - {fileID: 7461577530856661483, guid: dd91b147b7e3ded40af92596ef3ed5de, type: 3}
+  - {fileID: 7461577530856661483, guid: 89fd35820e75d284aad4c0f45e096aad, type: 3}
   spawnPoints:
   - {fileID: 1925800323}
   - {fileID: 949588857}
-  totalPlayers: 2
+  - {fileID: 964723504}
+  - {fileID: 2078796507}
+  totalPlayers: 4
   cinemachineTargetGroup: {fileID: 1712945625}
   cinemachineWeight: 1.5
   cinemachineRadius: 1.5
@@ -1529,7 +1533,7 @@ Transform:
   m_GameObject: {fileID: 1925800322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.95, y: 2.24, z: 0}
+  m_LocalPosition: {x: -4.5, y: 2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1592,7 +1596,7 @@ Transform:
   m_GameObject: {fileID: 2078796506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.68, y: -2.49, z: 0}
+  m_LocalPosition: {x: 3.22, y: -2.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
