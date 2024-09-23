@@ -60,10 +60,17 @@ public class MultiplayerController : MonoBehaviour
     IEnumerator KillPlayers()
     {
         // Wait 5 seconds
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
-        Debug.Log("Kill player 1");
+        // Name gameobject
+        playersList[0].name = "Player1";
+        Debug.Log(playersList[0].name);
+
         // Kill Player
         Destroy(playersList[0]);
+        playersList.RemoveAt(0);
+
+        // List the number of player game objects remaining
+        Debug.Log(playersList.Count);
     }
 }
