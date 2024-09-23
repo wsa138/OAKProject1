@@ -35,4 +35,14 @@ public class MultiplayerController : MonoBehaviour
         }
     }
 
+
+    //TEST: Multiplayer Test Area
+    private void LogPlayers()
+    {
+        Debug.Log("Player1");
+        Debug.Log("Player2");
+        Debug.Log("Player3");
+        Debug.Log("Player4");
+    }
+
 }
