@@ -10,6 +10,8 @@ public class MultiplayerController : MonoBehaviour
     public int totalPlayers; // Reference to the total number of players that must be spawned.
     public CinemachineTargetGroup cinemachineTargetGroup; // Reference to the Cinemacine Target Group object.
 
+    private List<GameObject> playersList = new List<GameObject>(); // List to store instantiated players
+
     [SerializeField] float cinemachineWeight;
     [SerializeField] float cinemachineRadius;
      
@@ -20,6 +22,10 @@ public class MultiplayerController : MonoBehaviour
         totalPlayers = Mathf.Clamp(totalPlayers, 1, 4);
 
         CreatePlayers();
+
+        //TEST: Multiplayer test area
+        LogPlayers();
+        StartCoroutine(KillPlayers());
     }
 
 
@@ -30,6 +36,9 @@ public class MultiplayerController : MonoBehaviour
         {
             GameObject player = Instantiate(playerPrefabs[i], spawnPoints[i].position, Quaternion.identity);
 
+            // Add the instantiated player to the players list
+            playersList.Add(player);
+
             // Add the instantiated player to the Cinemachine target group.
             cinemachineTargetGroup.AddMember(player.transform, cinemachineWeight, cinemachineRadius);
         }
@@ -37,12 +46,24 @@ public class MultiplayerController : MonoBehaviour
 
 
     //TEST: Multiplayer Test Area
+
+    // Log Players
     private void LogPlayers()
     {
-        Debug.Log("Player1");
-        Debug.Log("Player2");
-        Debug.Log("Player3");
-        Debug.Log("Player4");
+        for (int i = 0; i < playersList.Count; i++)
+        {
+            Debug.Log($"Player {i + 1} Transform: {playersList[i].transform.position}");
+        }
     }
 
+    // Kill each player after 5 seconds
+    IEnumerator KillPlayers()
+    {
+        // Wait 5 seconds
+        yield return new WaitForSeconds(5f);
+
+        Debug.Log("Kill player 1");
+        // Kill Player
+        Destroy(playersList[0]);
+    }
 }
