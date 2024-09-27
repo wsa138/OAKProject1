@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.InputSystem;
 
 public class MultiplayerController : MonoBehaviour
 {
@@ -24,8 +25,9 @@ public class MultiplayerController : MonoBehaviour
         CreatePlayers();
 
         //TEST: Multiplayer test area
-        LogPlayers();
-        StartCoroutine(KillPlayers());
+        // LogPlayers();
+        // CheckAssignedControllers();
+        // StartCoroutine(KillPlayers());
     }
 
 
@@ -54,6 +56,12 @@ public class MultiplayerController : MonoBehaviour
         {
             Debug.Log($"Player {i + 1} Transform: {playersList[i].transform.position}");
         }
+    }
+
+    private void CheckAssignedControllers()
+    {
+        PlayerInput player1Input = playersList[0].GetComponent<PlayerInput>();
+        Debug.Log(player1Input.devices[0].displayName);
     }
 
     // Kill each player after 5 seconds
