@@ -13,10 +13,13 @@ public class PlayerInputHandler : MonoBehaviour
     Animator bodyAnimator;
     Animator armAnimator;
 
+    private GameObject shieldObject; // Reference to the player shield object
+
     [SerializeField] Transform arm;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] BoxCollider2D playerCollider; // Reference to the player's box collider;
+    [SerializeField] float leftTriggerSensitivity = 0.3f;
 
     private void Start()
     {
@@ -24,6 +27,9 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Store the original local scale of Player object
         originalScale = transform.localScale;
+
+        // Find the shield child GameObject by name
+        shieldObject = transform.Find("Shield").gameObject;
 
         // Get all animators on character
         bodyAnimator = GetComponent<Animator>();
@@ -70,6 +76,25 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Set this player game object as the origin player for use in the PlayerProjectile script.
         projectileScript.originPlayer = this.gameObject;
+    }
+
+    void OnShield(InputValue value)
+    {
+        // Get the float value of the Left Trigger (range is 0.0 to 1.0)
+        float triggerValue = value.Get<float>();
+
+        if (triggerValue > leftTriggerSensitivity)
+        {
+            // Trigger is pressed (or held)
+            shieldObject.SetActive(true);
+            Debug.Log("Shield Activated");
+        }
+        else
+        {
+            // Trigger is released (when the value is very close to 0)
+            shieldObject.SetActive(false);
+            Debug.Log("Shield Deactivated");
+        }
     }
 
     private void RotateAim(Vector2 aimDirection)
