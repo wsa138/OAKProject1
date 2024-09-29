@@ -700,6 +700,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7682152998251007599, guid: 6a00692aa32c5864299476b67c7e1818, type: 3}
   playerCollider: {fileID: 0}
   leftTriggerSensitivity: 0.1
+  shieldObject: {fileID: 5663724611509778286}
 --- !u!50 &4548226070975657551
 Rigidbody2D:
   serializedVersion: 4

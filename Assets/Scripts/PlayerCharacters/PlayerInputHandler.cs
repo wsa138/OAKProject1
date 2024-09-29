@@ -6,20 +6,21 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     private Vector2 moveInput;
+    private Vector3 originalScale;
     private Rigidbody2D rb;
     private bool isFlippedLeft = false;
-    private Vector3 originalScale;
+    private bool isShielding = false;
+    
 
     Animator bodyAnimator;
     Animator armAnimator;
-
-    private GameObject shieldObject; // Reference to the player shield object
 
     [SerializeField] Transform arm;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] BoxCollider2D playerCollider; // Reference to the player's box collider;
     [SerializeField] float leftTriggerSensitivity = 0.3f;
+    [SerializeField] GameObject shieldObject; // Reference to the player shield object
 
     private void Start()
     {
@@ -27,9 +28,6 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Store the original local scale of Player object
         originalScale = transform.localScale;
-
-        // Find the shield child GameObject by name
-        shieldObject = transform.Find("Shield").gameObject;
 
         // Get all animators on character
         bodyAnimator = GetComponent<Animator>();
@@ -68,6 +66,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     void OnShoot()
     {
+        if (isShielding)
+        {
+            return;
+        }
+
         // Instantiate the projectile
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
@@ -80,6 +83,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     void OnShield(InputValue value)
     {
+        isShielding = true;
+
         // Get the float value of the Left Trigger (range is 0.0 to 1.0)
         float triggerValue = value.Get<float>();
 
@@ -93,6 +98,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             // Trigger is released (when the value is very close to 0)
             shieldObject.SetActive(false);
+            isShielding = false;
             Debug.Log("Shield Deactivated");
         }
     }
