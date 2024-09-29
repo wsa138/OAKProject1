@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b5b10fc4ecacd408bd93ae765e9c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplayerData: {fileID: 11400000, guid: 5f6f267a6151a5d43a46685a22eb1a98, type: 2}
   playerPrefabs:
   - {fileID: 7461577530856661483, guid: 4e16d9dd24165dc42b47784c9f291f5c, type: 3}
   - {fileID: 7461577530856661483, guid: 4e16d9dd24165dc42b47784c9f291f5c, type: 3}

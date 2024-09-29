@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class MultiplayerController : MonoBehaviour
 {
+    public MultiplayerDataSO multiplayerData; // Access the MultiplayerData Scriptable Object for this project.
     public GameObject[] playerPrefabs; // Reference to the prefab of the player GameObject
     public Transform[] spawnPoints; // Spawn point where players will be instantiated
     public int totalPlayers; // Reference to the total number of players that must be spawned.
@@ -28,6 +29,7 @@ public class MultiplayerController : MonoBehaviour
         // LogPlayers();
         // CheckAssignedControllers();
         // StartCoroutine(KillPlayers());
+        Debug.Log(multiplayerData.numberOfPlayers);
     }
 
 
