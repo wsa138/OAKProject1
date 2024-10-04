@@ -9,7 +9,6 @@ public class MultiplayerController : MonoBehaviour
     public MultiplayerDataSO multiplayerData; // Access the MultiplayerData Scriptable Object for this project.
     public GameObject[] playerPrefabs; // Reference to the prefab of the player GameObject
     public Transform[] spawnPoints; // Spawn point where players will be instantiated
-    public int totalPlayers; // Reference to the total number of players that must be spawned.
     public CinemachineTargetGroup cinemachineTargetGroup; // Reference to the Cinemacine Target Group object.
 
     private List<GameObject> playersList = new List<GameObject>(); // List to store instantiated players
@@ -20,9 +19,6 @@ public class MultiplayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Ensure totalPlayers is within the valid range starting.
-        totalPlayers = Mathf.Clamp(totalPlayers, 1, 4);
-
         CreatePlayers();
 
         //TEST: Multiplayer test area
@@ -36,7 +32,7 @@ public class MultiplayerController : MonoBehaviour
     private void CreatePlayers()
     {
         // Loop to instantiate the player prefabs at the spawn points.
-        for (int i = 0; i < totalPlayers; i++)
+        for (int i = 0; i < multiplayerData.numberOfPlayers; i++)
         {
             GameObject player = Instantiate(playerPrefabs[i], spawnPoints[i].position, Quaternion.identity);
 
@@ -54,7 +50,7 @@ public class MultiplayerController : MonoBehaviour
     // Log Players
     private void LogPlayers()
     {
-        for (int i = 0; i < playersList.Count; i++)
+        for (int i = 1; i < playersList.Count; i++)
         {
             Debug.Log($"Player {i + 1} Transform: {playersList[i].transform.position}");
         }
