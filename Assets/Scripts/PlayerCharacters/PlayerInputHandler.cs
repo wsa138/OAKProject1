@@ -8,7 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
     private Vector2 moveInput;
     private Vector3 originalScale;
     private Rigidbody2D rb;
-    private bool isFlippedLeft = false;
+    private bool isFlippedRight = false;
     private bool isShielding = false;
     
 
@@ -103,6 +103,18 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    void OnDodge()
+    {
+        Debug.Log("Dodge!!");
+        bodyAnimator.SetBool("isDodging", true);
+    }
+
+    void EndDoge()
+    {
+        bodyAnimator.SetBool("isDodging", false);
+    }
+
+
     private void RotateAim(Vector2 aimDirection)
     {
         if (aimDirection.sqrMagnitude > 0.01f) // Only rotate if there's significant input
@@ -110,7 +122,7 @@ public class PlayerInputHandler : MonoBehaviour
             float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
             // Adjust the angle based on the flip state
-            if (!isFlippedLeft)
+            if (!isFlippedRight)
             {
                 angle = 180 - angle; // Invert the angle if flipped
             }
@@ -128,17 +140,17 @@ public class PlayerInputHandler : MonoBehaviour
     private void FlipPlayer(Vector2 aimDirection)
     {
         // Flip the player based on aim, rotate firePoint
-        if (aimDirection.x < 0 && isFlippedLeft)
+        if (aimDirection.x < 0 && isFlippedRight)
         {
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip player to Left
             firePoint.localRotation = Quaternion.Euler(0, 0, 180); // Rotate firePoint by 180 degrees
-            isFlippedLeft = false;
+            isFlippedRight = false;
         }
-        else if (aimDirection.x > 0 && !isFlippedLeft)
+        else if (aimDirection.x > 0 && !isFlippedRight)
         {
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z); // Flip player to Right
             firePoint.localRotation = Quaternion.Euler(0, 0, 0); // Reset firePoint rotation
-            isFlippedLeft = true;
+            isFlippedRight = true;
         }
     }
 
